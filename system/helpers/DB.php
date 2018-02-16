@@ -16,6 +16,10 @@ class DB
         $this->clear();
     }
 
+    public function getMysqli() {
+        return $this->DB;
+    }
+
     private function clear() {
         $this->QUERY = (object) array(
             'insert' => null,

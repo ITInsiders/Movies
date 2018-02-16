@@ -6,8 +6,6 @@
  * Time: 20:37
  */
 
-require_once("DB.php");
-
 class System
 {
     private static $DB = null;

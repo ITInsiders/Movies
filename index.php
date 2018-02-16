@@ -8,6 +8,12 @@
 
 require_once("system/System.php");
 
+foreach (System::getFiles("system/helpers") as $file)
+        require_once("system/helpers/$file");
+
+foreach (System::getFiles("system/objects") as $file)
+    require_once("system/objects/$file");
+
 foreach (System::getFiles("helper", ".php") as $file)
     require_once("helper/$file");
 

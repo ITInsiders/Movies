@@ -20,6 +20,7 @@ abstract class Controller
 
         $model = $this->getModel();
         $items = $model->getItems();
+        $user = new User();
 
         if (file_exists($path_view))
             require_once($path_view);

@@ -2,8 +2,8 @@ body {
     background: radial-gradient(ellipse at center, #2d2d3c 0%,#24243a 50%,#2d2d3c 100%);
     min-height: 100vh;
     min-width: 100vw;
+    height: 200vh;
 }
-
 a * {
     text-decoration: none;
     color: initial;
@@ -11,10 +11,19 @@ a * {
 }
 
 header {
+    position: fixed;
     height: 50px;
+    line-height: 50px;
     width: 100%;
 }
-
+header, header * {
+    transition: 1s;
+}
+header.min {
+    height: 20px;
+    line-height: 20px;
+    background-color: #2d2d3c;
+}
 header .fav .icon {
     width: 40px;
     margin: 5px;
@@ -22,18 +31,19 @@ header .fav .icon {
     animation: HeaderFavIcon 4s backwards infinite;
     border-radius: 50%;
 }
+header.min .fav .icon {
+    width: 16px;
+    margin: 2px;
+}
 
 header .fav:hover .icon {
     animation: HeaderFavIconHover 1s backwards infinite linear;
-    box-shadow: 1px 1px 1px 0 #000000;
 }
-
 @keyframes HeaderFavIcon {
     0% {transform: rotate(0deg);}
     70% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
 }
-
 @keyframes HeaderFavIconHover {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
@@ -49,11 +59,11 @@ header .fav span {
     color: #77B3D4;
     font-weight: bold;
 }
-
-header .fav:hover span {
-    text-shadow: 1px 1px 1px #000000;
+header.min .fav span {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
 }
-
 header .fav:hover span:after {
     position: absolute;
     right: 0;
