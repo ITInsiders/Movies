@@ -6,22 +6,23 @@
  * Time: 14:11
  */
 
-class Object
+abstract class Object
 {
     protected $DB = null;
 
-    protected function __construct() {
+    public function __construct() {
         $this->DB = System::getDataBase();
 
-        foreach ($this->getObject() as $key => $value)
-            $this->{$key} = $value;
+        $user = $this->getObject();
+
+        if (!empty($user))
+            foreach ($user as $key => $value)
+                $this->{$key} = $value;
     }
 
-    protected function
-
-    public abstract function getObject($key = null);
+    public abstract function getObject($key = null, $type = null);
     public abstract function getObjects();
-    public abstract function Update();
-    public abstract function Delete();
-    public abstract function Insert();
+    public abstract function Update($data);
+    public abstract function Delete($id);
+    public abstract function Insert($data);
 }

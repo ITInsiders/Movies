@@ -8,6 +8,8 @@ $(window).scroll(Scroll);
 function Init() {
     Data.Header = $("header");
     Data.Window = $(window);
+    Resize();
+    Scroll();
 }
 
 function Resize() {

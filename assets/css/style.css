@@ -1,7 +1,7 @@
 body {
-    background: radial-gradient(ellipse at center, #2d2d3c 0%,#24243a 50%,#2d2d3c 100%);
+    background: radial-gradient(ellipse at center, #2d2d3c 0%, #24243a 100%);
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100%;
     height: 200vh;
 }
 a * {
@@ -20,20 +20,19 @@ header, header * {
     transition: 1s;
 }
 header.min {
-    height: 20px;
-    line-height: 20px;
-    background-color: #2d2d3c;
+    height: 30px;
+    line-height: 30px;
+    background-color: #24243a;
 }
 header .fav .icon {
     width: 40px;
     margin: 5px;
     float: left;
     animation: HeaderFavIcon 4s backwards infinite;
-    border-radius: 50%;
 }
 header.min .fav .icon {
-    width: 16px;
-    margin: 2px;
+    width: 24px;
+    margin: 3px;
 }
 
 header .fav:hover .icon {
@@ -60,9 +59,9 @@ header .fav span {
     font-weight: bold;
 }
 header.min .fav span {
-    height: 20px;
-    line-height: 20px;
-    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
 }
 header .fav:hover span:after {
     position: absolute;
