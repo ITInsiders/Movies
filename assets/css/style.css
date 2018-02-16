@@ -1,0 +1,63 @@
+body {
+    background: radial-gradient(ellipse at center, #2d2d3c 0%,#24243a 50%,#2d2d3c 100%);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+a * {
+    text-decoration: none;
+    color: initial;
+    display: inline-block;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+}
+
+header .fav .icon {
+    width: 40px;
+    margin: 5px;
+    float: left;
+    animation: HeaderFavIcon 4s backwards infinite;
+    border-radius: 50%;
+}
+
+header .fav:hover .icon {
+    animation: HeaderFavIconHover 1s backwards infinite linear;
+    box-shadow: 1px 1px 1px 0 #000000;
+}
+
+@keyframes HeaderFavIcon {
+    0% {transform: rotate(0deg);}
+    70% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes HeaderFavIconHover {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+header .fav span {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    float: left;
+    color: #77B3D4;
+    font-weight: bold;
+}
+
+header .fav:hover span {
+    text-shadow: 1px 1px 1px #000000;
+}
+
+header .fav:hover span:after {
+    position: absolute;
+    right: 0;
+    content: 'vies';
+    color: #FFFFFF;
+}
+
