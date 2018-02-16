@@ -25,4 +25,5 @@ abstract class Object
     public abstract function Update($data);
     public abstract function Delete($id);
     public abstract function Insert($data);
+    public abstract function isEmpty();
 }

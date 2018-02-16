@@ -111,7 +111,7 @@ class DB
         if (!empty($W->values)) {
             $QUERY .= " VALUES";
             foreach ($W->values as $key => $value)
-                $QUERY .= " ($value)" . ((count($W->values) > $key)?",":"");
+                $QUERY .= " ($value)" . ((count($W->values) - 1 > $key)?",":"");
         }
         if (!empty($W->from))
             $QUERY .= " FROM $W->from";

@@ -47,10 +47,10 @@ class System
         switch (floatval($code))
         {
             case 404:
-                header("Location: ERROR/404");
+                header("Location: /ERROR/404");
                 break;
             default:
-                header("Location: ERROR/404");
+                header("Location: /ERROR/404");
                 break;
         }
         exit();

@@ -8,16 +8,15 @@
 
 class User extends Object
 {
-    public function getObject($key = null, $type = null)
+    public function getObject($key = null, $type = "login")
     {
         if (empty($login)) $login = $_COOKIE["user"];
         if (empty($login)) return null;
 
         $this->DB->select("*")->from("users")
-            ->where(((empty($type))?"id":$type)." = '$login'");
+            ->where("$type = '$login'");
         return $this->DB->getObject();
     }
-
 
     public function getObjects()
     {
@@ -27,8 +26,6 @@ class User extends Object
 
     public function Update($data)
     {
-        $data = (object) $data;
-
         foreach ($data as $key => $value)
             $this->DB->set("$key = '$value'");
 
@@ -56,5 +53,17 @@ class User extends Object
             ->values(implode(", ", $values));
 
         return $this->DB->execute();
+    }
+
+    public function isEmpty()
+    {
+        return empty($this->id);
+    }
+
+    public function auth($login) {
+        setcookie("user", $login, time() + 3 * 24 * 60 * 60, "/");
+        $user = $this->getObject($login, "login");
+        if (empty($user))
+            $this->Insert(array("login" => $login));
     }
 }
