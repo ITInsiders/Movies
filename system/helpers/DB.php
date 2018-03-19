@@ -132,14 +132,16 @@ class DB
         if (empty($QUERY)) $QUERY = (string) $this;
         $this->clear();
         $QUERY = $this->DB->query($QUERY);
-        return $QUERY->fetch_object();
+        return (empty($QUERY))?null:$QUERY->fetch_object();
     }
     public function getObjectList($QUERY = null) {
         if (empty($QUERY)) $QUERY = (string) $this;
         $this->clear();
         $QUERY = $this->DB->query($QUERY);
         $RESULT = array();
-        while ($R = $QUERY->fetch_object()) $RESULT[] = $R;
+        if (!empty($QUERY))
+            while ($R = $QUERY->fetch_object())
+                $RESULT[] = $R;
         return $RESULT;
     }
     public function execute($QUERY = null) {
